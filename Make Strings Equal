@@ -1,3 +1,12 @@
+char x of string s to char y of string t jane ke liye we can eiter go directly if possible or choose intermediate character to first hop on like char u then go from x to u than from u to x.
+But there is a catch as ham dono string ke characterss ko kitnaa bhi changee kar sktee so what if we don't have x->u and u->t
+why not ledeke bich mei mandawali krkee x ko bhii z banao and y ko bhi z banao.
+
+Used Floyd Warshall graph algo simple and if no path found or no such combination possible then return not possible or here -1.
+
+Link https://www.geeksforgeeks.org/problems/make-strings-equal--150209/1
+
+
 class Solution:
     def minCost(self, s, t, transform, cost):
         a = [[float('inf') for _ in range(26)] for _ in range(26)]
