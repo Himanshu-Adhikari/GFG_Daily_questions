@@ -1,0 +1,2 @@
+To convert char x from string s into char y from string t, we can go directly if a valid transformation exists—otherwise we try an intermediate hop. But since both characters can be changed arbitrarily, the smarter move is to pick a common character z and convert both sides to z if that’s cheaper.
+I used Floyd–Warshall to precompute the minimum cost between every pair of characters. If no valid path or common character exists, answer is −1.
