@@ -1,0 +1,11 @@
+Task 
+You are given an undirected network of V hospitals numbered from 0 to V - 1, represented as a 2D array edges[][], where each element edges[i] = [u, v] denotes a direct connection between hospital u and hospital v.
+In one operation, you are allowed to remove any existing link and reconnect it between two hospitals that are currently not directly or indirectly connected.
+Your task is to determine the minimum number of operations required to make sure that all hospitals become connected, either directly or indirectly, using the given links.
+Note: If it is impossible to connect all hospitals into a single network, return -1.
+
+
+Explanation:
+IF we dont have v-1 edges we can't have a single connected component.
+And if we have then we just need the number of components -1 edges to connect all sets.
+use DSU or simple dfs/bfs to count no. of components
