@@ -1,0 +1,7 @@
+Given an 2D array of non-negative integers stones[][] where stones[i] = [xi , yi] represents the location of the ith stone on a 2D plane, the task is to return the maximum possible number of stones that you can remove.
+A stone can be removed if it shares either the same row or the same column as another stone that has not been removed.
+Note: Each coordinate point may have at most one stone.
+
+MY Thought: treat it as a graph and every component can have 
+m-1 removals (m no. of members in a component) as the 1 will 
+act as a guinee pig and let the rest pass;
