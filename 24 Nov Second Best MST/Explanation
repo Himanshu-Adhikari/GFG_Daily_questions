@@ -1,0 +1,15 @@
+Q:
+Given an undirected graph of V vertices numbered from (0 to V-1) and E edges represented by a 2D array edges[][], where each edges[i] contains three integers [u, v, w], representing an undirected edge from u to v, having weight w.
+Your task is to find the weight of the second best minimum spanning tree of the given graph.
+A second best MST is defined as the minimum-weight spanning tree whose total weight is strictly greater than the weight of the minimum spanning tree.
+
+
+Note:
+If no such second best MST exists, return -1. 
+Now we know how to find a mst --> either thorugh prims algo or through kruskals algo.
+we {cannot} use prims algo because it works on priority_queue and finding different msts would be quite confusing , so better is that we use kruskals algo.
+Kruskal's algo uses DSU concept .
+Logic of how to solve this problem.
+first Find the primary mst -->the main minimum spanning tree and keep a track of all the vertices which u have used in making the spanning tree. In my solution I am keeping a used array to keep a track of the vertices which I have used.
+See one example : is that if suppose you have 5 vertices and 10 edges , now best 4 edges will be used to make the best spanning tree out of 10 , the remaning 6 edges are of no use . we can store the answer of this best mst as primary mst , now we will try to generate all other msts by removing one of the 4 edges which we have used earlier , suppose I remove 1st used edge , then I have other 9 choices to make mst , if mst is possible from these 9 choices I will make it and check the answer of the new_mst , surely its weight will be greater than the best primary_mst , now do this for 2nd , 3rd , 4th vertices individually , do not use those vertices and try making msts from other 9 choices , from all of the other edge weigths , I have to take the minimum edge weight out there possible . and in this way I will be able to generate the second possible mst.
+since no of vertices are of order 1e2 and max edges can be of order 1e4 , the worst case time complexity can go upto 1e2*1e4==1e6 , for every vertice I am trying out all the other edges , this will surely pass the time constraints.
