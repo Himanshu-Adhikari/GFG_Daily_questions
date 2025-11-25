@@ -1,0 +1,7 @@
+Q:
+You are given an integer array arr[]. The value of a subarray is defined as the bitwise XOR of all elements in that subarray.
+Your task is to compute the bitwise XOR of the values of all possible subarrays of arr[].
+
+
+Ans:
+Just track how many subarrays will overlap at index i that would be its contribution and if it is odd then only have the xor with the result cause a^a=0 even contribution yields 0 .
