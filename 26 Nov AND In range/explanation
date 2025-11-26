@@ -1,0 +1,5 @@
+Q:
+You are given two integers l and r. Find the result after applying the series of Bitwise AND ( & ) operation on every natural number between the range l to r (including both).
+
+Ans:
+Just see if MSB is set in l and r both whenever u see that one ith bit is set in just one and not the other one just break it cause the rest AND results 0.
