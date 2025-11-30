@@ -1,0 +1,7 @@
+Q:
+Given a string s consisting of lowercase English characters, determine the total number of distinct non-empty substrings present in the string. A substring is defined as a contiguous block of characters within the string.
+Two substrings are considered distinct if their contents differ, even if they originate from different positions in the string.
+Note: The empty substring is not counted.
+
+Ans:
+Make a Trie Node and if the Node is first time visited inncrement ans;
