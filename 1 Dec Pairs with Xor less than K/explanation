@@ -1,0 +1,17 @@
+We use a bitwise trie to count how many previous numbers produce (x XOR y) < k for each new number x.
+
+Each number is inserted into the trie as a 16-bit binary path.
+During query, we compare (x XOR y) with k bit-by-bit from MSB to LSB, just like lexicographic comparison.
+
+If k has bit 0, XOR must be 0, so we follow the same-bit branch.
+
+If k has bit 1, XOR can be 0 or 1.
+
+All numbers giving XOR=0 at this bit are fully valid → add their counts.
+
+Then move to XOR=1 branch to continue checking lower bits.
+
+This counts all y that satisfy (x XOR y) < k.
+After each query, we insert x into the trie.
+
+Total complexity: O(n · bits).
