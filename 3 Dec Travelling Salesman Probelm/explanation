@@ -1,0 +1,76 @@
+You have n cities, and cost[i][j] tells you how much it costs to travel from city i → city j.
+
+You start at city 0, must visit every city exactly once, and come back to city 0.
+The goal is to find the minimum total travel cost.
+
+This is the classic Travelling Salesman Problem (TSP).
+
+🧠 Core idea
+
+We use DP + bitmasking to remember:
+
+which cities we have already visited (stored as a bitmask)
+
+which city we are currently standing in
+
+dp[mask][i] = minimum cost to visit all cities in mask and finish at city i.
+
+Example of a mask:
+mask = 10101 → visited cities {0,2,4}
+
+🔍 Step-by-step explanation
+1️⃣ Start at city 0
+
+We mark city 0 as visited:
+
+dp[1][0] = 0
+
+
+(Here 1 = 0001 in binary → only city 0 visited)
+
+2️⃣ Try all possible visit combinations
+
+For each visited set (mask)
+and for each current city i
+we try visiting a new unvisited city j.
+
+If j is not visited in mask → we move to it and update DP:
+
+dp[newMask][j] = min(current, dp[mask][i] + cost[i][j])
+
+
+So we "build up" all possible partial tours.
+
+3️⃣ After visiting all cities
+
+We have the full mask:
+
+fullmask = (1<<n) - 1
+
+
+Now we check all possible last cities j, and add cost to return to 0:
+
+ans = min(ans, dp[fullmask][j] + cost[j][0])
+
+
+This gives the total cycle cost.
+
+🎯 Final output
+
+ans is the minimum possible cost to:
+
+start at 0
+
+visit all cities exactly once
+
+return to 0
+
+If no valid path exists, return 0.
+
+🧩 Tiny Summary
+
+Think of it as:
+
+“DP that tries every subset of visited cities. For each subset, it tries adding one city at a time, always keeping the best (minimum) cost so far.”
+
+This avoids checking all n! permutations manually and solves TSP in O(n² · 2ⁿ).
