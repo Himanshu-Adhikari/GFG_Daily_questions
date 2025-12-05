@@ -1,0 +1,6 @@
+You are given n walls arranged in a row, and each wall must be painted using one of the k available colors. The cost of painting ith wall with jth color is given by costs[i][j]. Your task is to determine the minimum total cost required to paint all the walls in such a way that no two adjacent walls share the same color. If it is impossible to paint the walls under this condition, you must return -1.
+
+Ans:
+If column is just 1 and we have multiple rows than only its impossible so return -1.
+
+OTher than this we just need either the top rows (i-1) minimum or second minimum for our ith row just check that those don't lie in the current column everytime Simpel.
