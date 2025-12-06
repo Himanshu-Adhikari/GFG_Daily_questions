@@ -1,0 +1,10 @@
+You are given an integer array arr[] of size n(even). The array elements represent n coins of values v1, v2, ....vn.
+You play against an opponent in an alternating way. In each turn, a player selects either the first or last coin from the row, removes it from the row permanently, and receives the coin's value.
+You need to determine the maximum possible amount of money you can win if you go first.
+Note: Both the players are playing optimally.
+
+Ans:
+in one case either the user will pick from the remaining length selections either ends
+so in case its 1 i mean the currrent player is blocked from taking then we need to minimise the 
+ans or sum that the user can't pick and if the stat is 0 i.e user can pick then we should maximise the 
+ans
