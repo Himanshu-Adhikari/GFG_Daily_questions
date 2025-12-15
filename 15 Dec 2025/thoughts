@@ -1,0 +1,14 @@
+Q:
+Given an array arr[], count the number of indices such that deleting the element at that index and shifting all elements after it one position left results in an array where the sum of elements at even indices equals the sum at odd indices.
+
+Ans:
+Just maintain curr odd ind and even ind sum and 
+also maintain the rest arrays odd ind and even ind sum
+then at every point just remove the arr[i] from curr odd or 
+even based on i%2 and then check 
+curr odd - arr[i] + rest_even == curr_even + rest_odd
+if i%2==1
+
+curr odd  + rest_even == curr_even + rest_odd - arr[i]
+if i%2==0
+
