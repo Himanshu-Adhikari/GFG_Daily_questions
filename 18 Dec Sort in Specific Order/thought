@@ -1,0 +1,5 @@
+Given an array arr[] of positive integers.
+Your have to sort them so that the first part of the array contains odd numbers sorted in descending order, and the rest of the portion contains even numbers sorted in ascending order.
+
+Ans:
+divide the array into 2 parts then sort them accordingly and combine them later or you can do inplace sorting as well.
