@@ -1,0 +1,8 @@
+Q:
+Given an unsorted array arr[] and a 2D array queries[][] of size q, where each query is in the form of [a, b]. For each query, count how many elements in arr[] lie within the range [a, b], i.e., elements satisfying a ≤ x ≤ b.
+
+Return the results for all queries as a list of integers, where each integer corresponds to the count of elements in the respective query range.
+
+Ans:
+Just for finding count of x in range i,j inclusive
+Find lower bound of x in that range and upper bound (i.e. x+1 ) and just subtract them
